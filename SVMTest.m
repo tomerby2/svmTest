@@ -1,0 +1,12 @@
+clear;
+clc;
+close all;
+N = 1000;
+d = 2;
+X1 = randn(d,N);
+X1 = [X1 ; ones(1,N)];
+X2 = bsxfun(@plus,randn(d,N),[5;5]);
+X2 = [X2 ; zeros(1,N)];
+X = [X1, X2];
+[trainedClassifier, validationAccuracy] = trainClassifier(X);
+fit = trainedClassifier.predictFcn([2;2]);
