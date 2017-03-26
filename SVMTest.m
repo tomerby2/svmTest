@@ -9,4 +9,4 @@ X2 = bsxfun(@plus,randn(d,N),[5;5]);
 X2 = [X2 ; zeros(1,N)];
 X = [X1, X2];
 [trainedClassifier, validationAccuracy] = trainClassifier(X);
-fit = trainedClassifier.predictFcn([2;2]);
+fit = predict(trainedClassifier,[3,3]);
